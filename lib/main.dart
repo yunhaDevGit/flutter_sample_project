@@ -33,20 +33,17 @@ class MyApp extends StatelessWidget {
       //   // bottomNavigationBar: BottomAppBar() // 하단에 들어갈 위젯
       // )
       home: Scaffold(
-        appBar: AppBar( title: Text('앱임')),
-        body: Text('안녕'),
-        bottomNavigationBar: BottomAppBar(
-          child: SizedBox( // Container를 사용하면 Lint가 잡아줌 - width, height, child만 쓸 경우 SizedBox 쓰는게 좋음
-                            // Container가 좀 더 무겁기 때문
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Icon(Icons.phone),
-                Icon(Icons.message),
-                Icon(Icons.contact_page),
-              ],
-            ),
+        appBar: AppBar(title: Text('앱임')),
+        body: Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+            width: double.infinity, height: 150, color: Colors.blue, // double.infinity - 무한히 부모를 넘어가지 않는 선에서 꽉채운다
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
+            // child: Text('dddd'),
+            // decoration: BoxDecoration( // 나머지 속성은 decoration에 넣어야 한다
+            //   border: Border.all(color: Colors.black)
+            // ),
           ),
         ),
       )
